@@ -6,27 +6,28 @@ class Footer extends Component {
     render() {
         return(
             <>
-               <div id="footer">
-  <Nav
-    justified
-    vertical
-  >
-    <NavItem>
-      <NavLink
-        active
-        href="#"
-      >
-        Link
-      </NavLink>
-    </NavItem>
-    <NavItem>
-      <NavLink href="#">
-        Another Link
-      </NavLink>
-    </NavItem>
-  </Nav>
-  <p id="copyFooter">Copyright &copy; 2022 Curtis Marc</p>
-</div>
+                <div id="footer">
+                    <Nav
+                        justified
+                        vertical
+                    >
+                    <NavItem>
+                    <NavLink
+                        active
+                        href="#"
+                    >
+                        Link
+                    </NavLink>
+                    </NavItem>
+                    <NavItem>
+                    <NavLink href="#">
+                        Another Link
+                    </NavLink>
+                    </NavItem>
+                    </Nav>
+
+                    <p id="copyFooter">Copyright &copy; 2022 Curtis Marc</p>
+                </div>
             </>
         )
     }

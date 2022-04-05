@@ -10,7 +10,6 @@ class Header extends Component {
                 <div id="header">
                     <h1>Welcome to Crypto Tinder!!!</h1>
                 </div>
-                
             </>
         )
     }
