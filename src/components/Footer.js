@@ -7,25 +7,18 @@ class Footer extends Component {
         return(
             <>
                 <div id="footer">
-                    <Nav
-                        justified
-                        vertical
-                    >
-                    <NavItem>
-                    <NavLink
-                        active
-                        href="#"
-                    >
-                        Link
-                    </NavLink>
-                    </NavItem>
-                    <NavItem>
-                    <NavLink href="#">
-                        Another Link
-                    </NavLink>
-                    </NavItem>
+                    <Nav justified vertical>
+                        <NavItem>
+                            <NavLink active href="#">
+                                Link
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="#">
+                                Another Link
+                            </NavLink>
+                        </NavItem>
                     </Nav>
-
                     <p id="copyFooter">Copyright &copy; 2022 Curtis Marc</p>
                 </div>
             </>

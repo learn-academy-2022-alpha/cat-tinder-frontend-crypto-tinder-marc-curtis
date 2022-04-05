@@ -22,22 +22,22 @@ class App extends Component {
       cryptos: mockCryptos
     }
   }
-    render() {
-        return(
-            <Router>
-                <Header />
-                <Switch>
-                  <Route exact path="/" component={Home} />
-                  <Route path="/cryptoindex" component={CryptoIndex} />
-                  <Route path="/cryptoshow" component={CryptoShow} />
-                  <Route path="/cryptonew" component={CryptoNew} />
-                  <Route path="/cryptoedit" component={CryptoEdit} />
-                  <Route component={NotFound} />
-                </Switch>
-              <Footer />
-            </Router>
-        )
-    }
+  render() {
+    return(
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/cryptoindex" component={CryptoIndex} />
+          <Route path="/cryptoshow" component={CryptoShow} />
+          <Route path="/cryptonew" component={CryptoNew} />
+          <Route path="/cryptoedit" component={CryptoEdit} />
+          <Route component={NotFound} />
+        </Switch>
+        <Footer />
+      </Router>
+    )
+  }
 }
 
 export default App
