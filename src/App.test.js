@@ -12,27 +12,21 @@ import App from './App'
 import NotFound from './pages/NotFound'
 
 //Allows us to utilize the adapter we import in earlier, allowing us to call and render a component.
-Enzyme.configure({adapter: new Adapter()})
+Enzyme.configure({ adapter: new Adapter() })
 
-let renderedApp = shallow(<App />)
-    
+
 describe("When App renders", () => {
+  let renderedApp
+  beforeEach(() => {
+    renderedApp = shallow(<App />)
+  })
+
   it("displays a header and footer", () => {
-    
+
     const appHeading = renderedApp.find("Header")
     expect(appHeading.length).toEqual(1)
 
     const appFooter = renderedApp.find("Footer")
     expect(appFooter.length).toEqual(1)
   })
-
-  // testing for routes
-  // it("has a route for the home and not found page", () => {
-  //   const renderedApp = shallow(<App />)
-    
-  //   const routeHome = renderedApp.find('[path="/"]')
-  //   expect(routeHome.length).toEqual(1)
-  //   const routeNotFound = renderedApp.find(NotFound)
-  //   expect(routeNotFound.length).toEqual(1)
-  // })
 })

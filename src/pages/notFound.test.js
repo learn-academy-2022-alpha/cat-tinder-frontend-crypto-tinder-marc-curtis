@@ -11,13 +11,15 @@ import Adapter from 'enzyme-adapter-react-16'
 import NotFound from './NotFound'
 
 //Allows us to utilize the adapter we import in earlier, allowing us to call and render a component.
-Enzyme.configure({adapter: new Adapter()})
-
-let renderedNotFound = shallow(<NotFound />)
+Enzyme.configure({ adapter: new Adapter() })
 
 describe("When NotFound renders", () => {
+  let renderedNotFound
+  beforeEach(() => {
+    renderedNotFound = shallow(<NotFound />)
+  })
   it("display not found page", () => {
-    
+
     const renderedText = renderedNotFound.find("h1").text()
     expect(renderedText).toEqual("Sorry, what you are looking for does not exist")
   })
