@@ -1,10 +1,24 @@
+import { toHaveDisplayValue } from "@testing-library/jest-dom/dist/matchers"
 import React, { Component } from "react"
+import { Card, CardTitle, Col } from 'reactstrap'
 
 class CryptoIndex extends Component {
     render() {
-        return(
+        return (
             <>
-                <h1>CryptoIndex</h1>
+                <h3>Meet the Cryptos!</h3>
+                <br />
+                <Col sm="6">
+                    {this.props.cryptos.map(cryptos => {
+                        return (
+                            <Card body key={cryptos.id}>
+                                <CardTitle>
+                                    <h4>{cryptos.name}</h4>
+                                </CardTitle>
+                            </Card>
+                        )
+                    })}
+                </Col>
             </>
         )
     }

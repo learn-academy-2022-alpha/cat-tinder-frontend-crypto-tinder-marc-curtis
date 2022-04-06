@@ -16,20 +16,26 @@ import {
 
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       cryptos: mockCryptos
     }
   }
   render() {
-    return(
+    return (
       <Router>
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/cryptoindex" component={CryptoIndex} />
-          <Route path="/cryptoshow" component={CryptoShow} />
+          <Route path="/cryptoindex/" render={(props) => <CryptoIndex cryptos={this.state.cryptos} />} />
+
+          <Route path="/cryptoshow/:id" render={(props) => {
+            let id = props.match.params.id
+            let crypto = this.state.cryptos.find(crypto => crypto.id === +id)
+            return <CryptoShow crypto={crypto} />
+          }} />
+
           <Route path="/cryptonew" component={CryptoNew} />
           <Route path="/cryptoedit" component={CryptoEdit} />
           <Route component={NotFound} />

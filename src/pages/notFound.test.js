@@ -8,25 +8,19 @@ import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
 // Imports in the component we are going to be testing.
-import App from './App'
-import NotFound from './pages/NotFound'
+import NotFound from './NotFound'
 
 //Allows us to utilize the adapter we import in earlier, allowing us to call and render a component.
 Enzyme.configure({ adapter: new Adapter() })
 
-
-describe("When App renders", () => {
-  let renderedApp
+describe("When NotFound renders", () => {
+  let renderedNotFound
   beforeEach(() => {
-    renderedApp = shallow(<App />)
+    renderedNotFound = shallow(<NotFound />)
   })
+  it("display not found page", () => {
 
-  it("displays a header and footer", () => {
-
-    const appHeading = renderedApp.find("Header")
-    expect(appHeading.length).toEqual(1)
-
-    const appFooter = renderedApp.find("Footer")
-    expect(appFooter.length).toEqual(1)
+    const renderedText = renderedNotFound.find("h1").text()
+    expect(renderedText).toEqual("Sorry, what you are looking for does not exist")
   })
 })
