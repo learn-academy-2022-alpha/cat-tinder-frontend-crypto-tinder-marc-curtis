@@ -14,7 +14,6 @@ import {
   Switch
 } from 'react-router-dom'
 
-
 class App extends Component {
   constructor(props) {
     super(props)
@@ -22,21 +21,31 @@ class App extends Component {
       cryptos: mockCryptos
     }
   }
+
+  createCrypto = (crypto) => {
+    console.log(crypto)
+  }
+
   render() {
     return (
       <Router>
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/cryptoindex/" render={(props) => <CryptoIndex cryptos={this.state.cryptos} />} />
-
-          <Route path="/cryptoshow/:id" render={(props) => {
+          <Route 
+            path="/cryptoindex/" 
+            render={(props) => <CryptoIndex cryptos={this.state.cryptos} />} 
+          />
+          <Route 
+            path="/cryptoshow/:id" render={(props) => {
             let id = props.match.params.id
             let crypto = this.state.cryptos.find(crypto => crypto.id === +id)
             return <CryptoShow crypto={crypto} />
           }} />
-
-          <Route path="/cryptonew" component={CryptoNew} />
+          <Route 
+            path="/cryptonew" 
+            render={(props) => <CryptoNew createCrypto={this.createCrypto} />} 
+          />
           <Route path="/cryptoedit" component={CryptoEdit} />
           <Route component={NotFound} />
         </Switch>
