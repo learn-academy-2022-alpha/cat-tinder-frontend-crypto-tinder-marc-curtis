@@ -1,24 +1,36 @@
-import React, { Component } from "react"
-import { Card, CardTitle, CardText, Col } from 'reactstrap'
+import React, { Component } from "react";
+import {Card, CardBody, CardTitle, CardText, Button, NavLink
+} from 'reactstrap'
 
-class CryptoShow extends Component {
+export default class CryptoShow extends Component {
     render() {
         let { crypto } = this.props
-        return (
-            <>
-                <h3>Crypto Description</h3>
-                <Col sm="6">
-                    {crypto &&
-                        <Card body>
-                            <CardTitle>Hi, my name is {crypto.name}!</CardTitle>
-                            <img src={this.props.crypto.image} alt="sexy crypto" />
-                            <CardText>I am {this.props.crypto.age} years old. My creator is {this.props.crypto.creator}.</CardText>
-                        </Card>
-                    }
-                </Col>
-            </>
+        return(
+            <div className="show-body">
+                <h1>s</h1>
+                <Card>
+                <CardBody>
+                    <CardTitle className="show-title">
+                    { crypto.name }
+                    </CardTitle>
+                </CardBody>
+                <img
+                    alt="Card image cap"
+                    src={crypto.image}
+                    width="100%"
+                />
+                <CardBody>
+                    <CardText>
+                    {crypto.name} was created by {crypto.creator} {crypto.age} years ago.
+                    </CardText>
+                </CardBody>
+                <CardBody>
+                    <NavLink to={`/crypto/${this.props.crypto.id}`}>
+                        <Button className="edit-show">Edit</Button>
+                    </NavLink>
+                </CardBody>
+                </Card>
+            </div>
         )
     }
 }
-
-export default CryptoShow

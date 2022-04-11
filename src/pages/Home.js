@@ -1,16 +1,11 @@
-import React, { Component } from "react"
-import cryptoImage from "../assets/cryptoImage.png"
+import React, { Component } from "react";
 
-class Home extends Component {
+export default class Home extends Component {
     render() {
-        return (
-            <>
-                <h1>Home</h1>
-                <h2>Meet all the cryptos!</h2>
-                <img src={cryptoImage} alt="no image found" width="500px"></img>
-            </>
+        return(
+        <>
+            <h3>Hello Investor</h3>
+        </>
         )
     }
 }
-
-export default Home

@@ -1,28 +1,39 @@
-import { toHaveDisplayValue } from "@testing-library/jest-dom/dist/matchers"
-import React, { Component } from "react"
-import { Card, CardTitle, Col } from 'reactstrap'
-import { NavLink } from 'react-router-dom'
+import React, { Component } from "react";
+import { 
+    Card, CardImg, CardBody, CardTitle, Row, Col, NavLink 
+} from "reactstrap";
 
-class CryptoIndex extends Component {
+export default class CryptoIndex extends Component {
     render() {
-        return (
-            <>
-                <h3>Meet the Cryptos!</h3>
+        return(
+            <div className="index-body">
+                <div className="crypto-list"> List of Cryptos</div>
                 <br />
-                <Col sm="6">
-                    {this.props.cryptos && this.props.cryptos.map(cryptos => {
-                        return (
-                            <Card body key={cryptos.id}>
-                                <CardTitle>
-                                    <NavLink to={`/cryptoshow/${cryptos.id}`}>{cryptos.name}</NavLink>
-                                </CardTitle>
-                            </Card>
-                        )
-                    })}
-                </Col>
-            </>
+                { this.props.cryptos && this.props.cryptos.map(crypto => {
+                return (
+                    <Row 
+                        className="index-padding"  
+                        key={crypto.id}
+                    >
+                    <Col>
+                        <Card>
+                        <CardImg
+                            alt="Card image cap"
+                            src={crypto.image}
+                        />
+                        <CardBody>
+                            <CardTitle tag="h4">
+                            <NavLink href={`/cryptoshow/${crypto.id}`}>
+                                {crypto.name}
+                            </NavLink>
+                            </CardTitle>
+                        </CardBody>
+                        </Card>
+                    </Col>
+                    </Row>
+                )
+                })}
+            </div>
         )
     }
 }
-
-export default CryptoIndex

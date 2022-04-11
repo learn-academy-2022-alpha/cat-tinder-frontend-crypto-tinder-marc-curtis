@@ -21,11 +21,7 @@ describe("When Home renders", () => {
     renderedHome = shallow(<Home />)
   })
   it("display home page", () => {
-    const renderedText = renderedHome.find("h1").text()
-    expect(renderedText).toEqual("Home")
-  })
-  it("display home image", () => {
-    const renderedText = renderedHome.find("img")
-    expect(renderedText.length).toEqual(1)
+    const renderedText = renderedHome.find("h3").text()
+    expect(renderedText).toEqual("Hello Investor")
   })
 })

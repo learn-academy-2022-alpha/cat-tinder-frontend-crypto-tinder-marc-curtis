@@ -10,7 +10,7 @@ describe("When header renders", () => {
     renderedHeader = shallow(<Header />)
   })
   it("display header page", () => {
-    const renderedText = renderedHeader.find("h1").text()
-    expect(renderedText).toEqual("Welcome to Crypto Tinder!!!")
+    const renderedText = renderedHeader.find("img")
+    expect(renderedText.length).toEqual(1)
   })
 })

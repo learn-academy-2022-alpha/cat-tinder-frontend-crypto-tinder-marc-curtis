@@ -1,29 +1,65 @@
-import React, { Component } from "react"
-import { Nav, NavItem, NavLink } from 'reactstrap'
-import "./style.css"
+import React, { Component } from "react";
+import githubLogo from '../assets/logos/ethereumLogo.png';
+import { 
+    Nav, NavItem, NavLink
+} from "reactstrap";
 
-class Footer extends Component {
+export default class Footer extends Component {
     render() {
         return(
-            <>
-                <div id="footer">
-                    <Nav justified vertical>
-                        <NavItem>
-                            <NavLink active href="#">
-                                Link
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="#">
-                                Another Link
-                            </NavLink>
-                        </NavItem>
-                    </Nav>
-                    <p id="copyFooter">Copyright &copy; 2022 Curtis Marc</p>
-                </div>
-            </>
+        <footer>
+            
+            <div className="footer-style">
+            <Nav>
+                <NavItem>
+                <NavLink
+                    href="https://github.com/mrcallenmatias" target="_blank"
+                >
+                    Terms
+                </NavLink>
+                </NavItem>
+                <NavItem>
+                <NavLink
+                    href="https://github.com/mrcallenmatias" target="_blank"
+                >
+                    Privacy
+                </NavLink>
+                </NavItem>
+                <NavItem>
+                <NavLink
+                    href="https://github.com/mrcallenmatias" target="_blank"
+                >
+                    Security
+                </NavLink>
+                </NavItem>
+                <NavItem>
+                <NavLink
+                    href="https://github.com/mrcallenmatias" target="_blank"
+                >
+                    Docs
+                </NavLink>
+                </NavItem>
+                <NavItem>
+                <NavLink
+                    href="https://github.com/mrcallenmatias" target="_blank"
+                >
+                    Contact
+                </NavLink>
+                </NavItem>
+                <NavItem>
+                <NavLink
+                    href="https://github.com/mrcallenmatias" target="_blank"
+                >
+                    About
+                </NavLink>
+                </NavItem>
+                </Nav>
+                <Nav className="copyright">
+                    <img src={ githubLogo } className="footer-logo"/>      &copy; 2022 CryptoTinder by Marc & Curtis
+                </Nav>
+            </div>
+
+        </footer>
         )
     }
 }
-
-export default Footer

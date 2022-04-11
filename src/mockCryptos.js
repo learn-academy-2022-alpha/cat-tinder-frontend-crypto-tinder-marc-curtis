@@ -4,21 +4,21 @@ let cryptos = [
     name: "Bitcoin",
     age: 13,
     creator: "Satoshi Nakamoto",
-    image: "https://images.unsplash.com/photo-1543852786-1cf6624b9987?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+    image: "https://images.news18.com/ibnlive/uploads/2021/11/bitcoin-2-16379233633x2.png?impolicy=website&width=510&height=356"
   },
   {
     id: 2,
-    name: "Etherium",
+    name: "Ethereum",
     age: 8,
     creator: "Vitalik Buterin",
-    image: "https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1092&q=80"
+    image: "https://www.justetf.com/images/thumbnails/etf-investment-guide-theme-ethereum.jpg"
   },
   {
     id: 3,
     name: "Doge",
     age: 8,
     creator: "Billy Markus",
-    image: "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+    image: "https://imgsrv2.voi.id/0b0UjfJOgtwfOK91iZwqi99movBlXRKAkDxQotW-jzQ/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy85MDUzOS8yMDIxMTAwMTE4MjktbWFpbi5wbmc.jpg"
   }
 ]
 export default cryptos
