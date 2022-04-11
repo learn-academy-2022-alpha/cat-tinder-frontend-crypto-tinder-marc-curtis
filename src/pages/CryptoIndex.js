@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import { NavLink } from 'react-router-dom'
 import { 
-    Card, CardImg, CardBody, CardTitle, Row, Col, NavLink 
+    Card, CardImg, CardBody, CardTitle, Row, Col
 } from "reactstrap";
 
 export default class CryptoIndex extends Component {
@@ -23,8 +24,8 @@ export default class CryptoIndex extends Component {
                         />
                         <CardBody>
                             <CardTitle tag="h4">
-                            <NavLink href={`/cryptoshow/${crypto.id}`}>
-                                {crypto.name}
+                            <NavLink to={`/cryptoshow/${crypto.id}`}>
+                                <span>{crypto.name}</span>
                             </NavLink>
                             </CardTitle>
                         </CardBody>

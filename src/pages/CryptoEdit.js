@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import { Form, Label, Input, FormGroup, Button } from "reactstrap";
+import { NavLink } from 'react-router-dom'
+import { 
+    Form, Label, Input, FormGroup, Button 
+} from "reactstrap";
 import { Redirect } from 'react-router-dom'
 
 export default class CryptoEdit extends Component {
@@ -22,7 +25,7 @@ export default class CryptoEdit extends Component {
     this.setState({newCrypto: newCrypto})
     }
     handleSubmit = () => {
-        this.props.updateCrypto(this.state.newCrypto, this.props.cat.id)
+        this.props.updateCrypto(this.state.newCrypto, this.props.crypto.id)
         this.setState({submitted: true})
     }
     render() {
@@ -77,15 +80,14 @@ export default class CryptoEdit extends Component {
                 value={this.state.newCrypto.image}
                 />
             </FormGroup>
-            
-            <Button 
-                style={{backgroundColor: "#39535c"}}
-                name="submit"
-                onClick={this.handleSubmit}
-                
-            >
-                Edit Coin
-            </Button>
+                <Button 
+                    style={{backgroundColor: "#39535c"}}
+                    name="submit"
+                    onClick={this.handleSubmit}
+                >
+                    Edit Coin
+                    {this.state.submitted && <Redirect to={`/cryptoshow/${this.props.crypto.id}`} />}
+                </Button>
             </Form>
         </div>
         )
