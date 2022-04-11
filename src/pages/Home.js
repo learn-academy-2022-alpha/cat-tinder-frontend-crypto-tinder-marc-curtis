@@ -1,11 +1,17 @@
 import React, { Component } from "react";
+import crypto from '../assets/backimg.jpeg'
 
 export default class Home extends Component {
     render() {
         return(
-        <>
-            <h3>Hello Investor</h3>
-        </>
+        <div className="home">
+            <div className="back-image"></div>
+            <div>CRYPTO TINDER</div>
+            <div>DISCOVER NEW TOKEN</div>
+            <p className="p">A new way of learning information about cryptocurrency.</p>
+
+            
+        </div>
         )
     }
 }

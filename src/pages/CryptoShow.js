@@ -1,13 +1,16 @@
 import React, { Component } from "react";
-import {Card, CardBody, CardTitle, CardText, Button, NavLink
+import { NavLink } from 'react-router-dom'
+import {Card, CardBody, CardTitle, CardText, Button
 } from 'reactstrap'
 
 export default class CryptoShow extends Component {
+    handleSubmit = () => {
+        this.props.deleteCrypto(this.props.crypto.id)
+    }
     render() {
         let { crypto } = this.props
         return(
             <div className="show-body">
-                <h1>s</h1>
                 <Card>
                 <CardBody>
                     <CardTitle className="show-title">
@@ -25,8 +28,17 @@ export default class CryptoShow extends Component {
                     </CardText>
                 </CardBody>
                 <CardBody>
-                    <NavLink to={`/crypto/${this.props.crypto.id}`}>
-                        <Button className="edit-show">Edit</Button>
+                    <NavLink to={`/cryptoedit/${this.props.crypto.id}`}>
+                        <Button className="edit-show">Edit Crypto</Button>
+                    </NavLink>
+                    <NavLink to="/cryptoindex">
+                        <Button 
+                            className="delete-show"
+                            onClick={this.handleSubmit}
+                        >
+                            Delete Crypto
+                        </Button>
+                        
                     </NavLink>
                 </CardBody>
                 </Card>

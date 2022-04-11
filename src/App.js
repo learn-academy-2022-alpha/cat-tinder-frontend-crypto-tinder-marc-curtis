@@ -60,8 +60,20 @@ class App extends Component {
       method: "PATCH"
     })
     .then(response => response.json())
-    .then(payload => this.readCat())
-    .catch(errors => console.log("Cat update errors:", errors))
+    .then(payload => this.readCrypto())
+    .catch(errors => console.log("Crypto update errors:", errors))
+  }
+
+  deleteCrypto = (id) => {
+    fetch(`http://localhost:3000/cryptos/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+    .then(response => response.json())
+    .then(payload => this.readCrypto())
+    .catch(errors => console.log("Crypto delete errors:", errors))
   }
 
   render() {
@@ -81,7 +93,7 @@ class App extends Component {
             render={(props) => {
               let id = props.match.params.id
               let crypto = this.state.cryptos.find(crypto => crypto.id === +id)
-              return <CryptoShow crypto={crypto} />
+              return <CryptoShow crypto={crypto} deleteCrypto={this.deleteCrypto} />
             }}
           />
           <Route 
